@@ -1,6 +1,8 @@
-# Auth0 - Aurelia
+# Setting Up the Home Cooked Meal WebSite
 
-This sample application demonstrates how to integrate Auth0 with Aurelia.
+This site uses aurelia, bootstrap, and auth0 (for SSO) on the front ed.
+
+The directions below will get you setup to 
 
 ## Getting Started
 
@@ -24,11 +26,13 @@ npm install -g http-server
 http-server
 ```
 
+You can also run directly out of visual studio 2015, which is why I included the web.config.
+
 ## Set Your Auth0 Credentials
 
 If you haven't already done so, [sign up](https://auth0.com/signup) for your free Auth0 account.
 
-Set your credentials in `Auth0Lock`.
+Set your credentials in `Auth0Lock`. (currently my credentials are there)
 
 
 ```js
