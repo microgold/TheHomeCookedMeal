@@ -1,8 +1,16 @@
 # Setting Up the Home Cooked Meal WebSite
 
+## Description
+
+This Open Source Project will be a template in Aurelia for Shared Economy Projects.
+The Concept for the Site is that a chef can sign up to cook their best meal(s) and charge per head.
+A diner can search for chefs for a particular meal that they wish to eat.  The site will include
+sign up through facebook, google, it will be responsive for mobile, and it will allow the user
+to collect payment through paypal or stripe (credit card)
+
 This site uses aurelia, bootstrap, and auth0 (for SSO) on the front ed.
 
-The directions below will get you setup to 
+The directions below will get you setup tog 
 
 ## Getting Started
 
@@ -61,9 +69,7 @@ Auth0 helps you to:
 1. Go to [Auth0](https://auth0.com/signup) and click Sign Up.
 2. Use Google, GitHub or Microsoft Account to login.
 
-## Issue Reporting
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
 
 ## Author
 
