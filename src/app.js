@@ -21,6 +21,7 @@ export class App {
       config.map([
         // header
         { route: ['','welcome'],  moduleId: './welcome/welcome',  settings: { isTop: "true" },     nav: true,   title:'Welcome' },
+        { route: 'diners',  moduleId: './diners/diners',    settings: { isTop: "true" },  nav: true,       title:'Diners' },
         { route: 'chefs',  moduleId: './chefs/chefs',    settings: { isTop: "true" },  nav: true,       title:'Chefs' },
          { route: 'signup',  moduleId: './signup/signup',    settings: { isTop: "true" },   nav: true,       title:'Sign Up' },
         // footer has no isTop setting
