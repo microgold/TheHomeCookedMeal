@@ -7,22 +7,25 @@ import {AuthService} from './services/auth-service';
 @inject(HttpClient, Router, AuthService)
 export class App {
   message = 'Auth0 - Aurelia';
-  
-  
-  
+
+
+
   constructor(http, router, authService) {
     this.http = http;
     this.router = router;
     this.authService = authService;
     var self = this;
-      
-    
+
+
     this.router.configure(config => {
       config.map([
-        { route: ['','welcome'],  moduleId: './welcome',      nav: true,   title:'Welcome' },
-        { route: 'chefs',  moduleId: './chefs',      nav: true,       title:'Chefs' },
-         { route: 'signup',  moduleId: './signup',      nav: true,       title:'Sign Up' },
-      
+        // header
+        { route: ['','welcome'],  moduleId: './welcome/welcome',  settings: { isTop: "true" },     nav: true,   title:'Welcome' },
+        { route: 'chefs',  moduleId: './chefs/chefs',    settings: { isTop: "true" },  nav: true,       title:'Chefs' },
+         { route: 'signup',  moduleId: './signup/signup',    settings: { isTop: "true" },   nav: true,       title:'Sign Up' },
+        // footer has no isTop setting
+         { route: 'contact-us',  moduleId: './contact-us/contact-us',       nav: true,       title:'Contact Us' },
+
       ])
     });
     this.http.configure(config => {
@@ -32,18 +35,18 @@ export class App {
         }
       });
     });
-    
+
     // add authservice here
 
-    
 
-  
+
+
   }
-  
 
-  
- 
-  
-  
- 
+
+
+
+
+
+
 }
