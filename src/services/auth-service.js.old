@@ -1,8 +1,8 @@
-﻿export class AuthService {  
+﻿export class AuthService {
 
     lock = new Auth0Lock('KhXgPLnB696iGhJY7VXSJgdDnMtJaA2i', 'microgold.auth0.com', {
         auth: {
-            redirectUrl: 'http://localhost:1811/#/profile',
+            redirectUrl: 'http://localhost:8080/#/profile',
             responseType: 'code',
             params: {
                 scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
@@ -34,13 +34,13 @@
     }
 
     launchLoginDialog() {
-             this.lock.show();   
+             this.lock.show();
     }
 
     logout() {
         localStorage.removeItem('profile');
         localStorage.removeItem('id_token');
-        this.isAuthenticated = false;   
+        this.isAuthenticated = false;
         this.decodedJwt = null;
     }
 

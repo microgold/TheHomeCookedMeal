@@ -24,7 +24,7 @@ footer {
    z-index: 3;
    height:60px;   /* Height of the footer */
    background:#EEE;
-   left:15px;   
+   left:15px;
 }
 
 main.bodyTemplate {
@@ -38,6 +38,10 @@ main.bodyTemplate {
     left: 50%;
     margin-left: -512px;   /* 50% */
   }
+}
+
+.form-container {
+  width: 500px;
 }
 
 .splash {

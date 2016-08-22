@@ -2,40 +2,19 @@ import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 import {Router} from 'aurelia-router';
 import {tokenIsExpired} from './utils/tokenUtils';
-import {EventAggregator} from 'aurelia-event-aggregator';
-// import {AuthService} from './services/auth-service';
+import {AuthService} from './services/auth-service';
 
-@inject(HttpClient, Router, EventAggregator)  ////,  AuthService)
+@inject(HttpClient, Router, AuthService)
 export class App {
   message = 'Auth0 - Aurelia';
 
-  lock = new Auth0Lock('KhXgPLnB696iGhJY7VXSJgdDnMtJaA2i', 'microgold.auth0.com');
-  isAuthenticated = false;
 
 
-
-  constructor(http, router,  eventAggregator) {
+  constructor(http, router, authService) {
     this.http = http;
     this.router = router;
-    this.eventAggregator = eventAggregator;
-  //  this.authService = authService;
+    this.authService = authService;
     var self = this;
-
-      this.listenForLoginLock();
-
-    this.lock.on("authenticated", (authResult) => {
-      self.lock.getProfile(authResult.idToken, (error, profile) => {
-        if (error) {
-          // Handle error
-          return;
-        }
-
-        localStorage.setItem('id_token', authResult.idToken);
-        localStorage.setItem('profile', JSON.stringify(profile));
-        self.isAuthenticated = true;
-        self.lock.hide();
-      });
-        });
 
 
     this.router.configure(config => {
@@ -60,19 +39,17 @@ export class App {
       });
     });
 
-  }
-
     // add authservice here
-    listenForLoginLock() {
-      this.eventAggregator.subscribe('lockScreenEvent', payload => {
-          this.launchLoginDialog();
-      });
-    }
 
-    launchLoginDialog() {
-             this.lock.show();
-    }
 
 
 
   }
+
+
+
+
+
+
+
+}
