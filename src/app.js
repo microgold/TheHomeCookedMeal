@@ -34,6 +34,7 @@ export class App {
         localStorage.setItem('profile', JSON.stringify(profile));
         self.isAuthenticated = true;
         self.lock.hide();
+        this.router.navigate("application");
       });
         });
 

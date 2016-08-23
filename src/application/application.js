@@ -10,12 +10,19 @@ export class Application{
   constructor(stateService)  {
     this.stateService = stateService;
 
-    this.fullname = '';
     this.address = '';
     this.city = '';
     this.selectedState = null;
-    this.zip = ''
-    this.email = ''
+    this.zip = '';
+    this.isLegal = false;
+
+// pull some of the attributes from the SSO login profile
+    let profileString =  localStorage.getItem('profile');
+    let profile = JSON.parse(profileString);
+
+      this.fullname = profile.name;
+      this.email = profile.email;
+      this.imageUrl = profile.picture;
 
     this.stateService.getStates().then(
       data => {

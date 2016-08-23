@@ -1,1 +1,1 @@
-set PATH=%PATH%;%AppData\npm
+set PATH=%PATH%;%AppData%\npm
